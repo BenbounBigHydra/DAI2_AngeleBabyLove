@@ -1,5 +1,7 @@
 package main.commands.infosCommands;
 
-public abstract class InfosCommand {
+import main.commands.Command;
+
+public abstract class InfosCommand extends Command  {
     
 }
