@@ -37,6 +37,8 @@ Alternatively you can do it on the command line with git directly
 - clone the repository with the command
 ```
 git clone <copied-url>
+
+Coucou, moi c'est Manu et je suis cachée dans le texte.
 ```
 
 ## Running the project
