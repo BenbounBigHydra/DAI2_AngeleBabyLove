@@ -38,7 +38,6 @@ Alternatively you can do it on the command line with git directly
 ```
 git clone <copied-url>
 
-Coucou, moi c'est Manu et je suis cachée dans le texte.
 ```
 
 ## Running the project
@@ -62,9 +61,3 @@ A few string manipulation examples are found in the `src/exemples` folder and ca
 ## About this README
 Feel free to edit this README as well, it's yours :)
 The format of this file is [markdown](https://markdownlivepreview.com/)
-
-<<<<<<< HEAD
-KiouKiou les copaings
-=======
-coucou pioupiou 🤣
->>>>>>> Etikeks
