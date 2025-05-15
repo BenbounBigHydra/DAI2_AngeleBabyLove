@@ -1,4 +1,4 @@
-package main.commands;
+package main.commands.infosCommands;
 
 public abstract class InfosCommand {
     

@@ -1,4 +1,4 @@
-package main.commands;
+package main.commands.alterCommands;
 
 public abstract class AlterCommand {
 
