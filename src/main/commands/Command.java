@@ -1,5 +1,5 @@
 package main.commands;
 
-public abstract class Command {
+public abstract class Command implements ICommand{
     
 }

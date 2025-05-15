@@ -1,6 +1,6 @@
 package main.commands.alterCommands;
 
-public abstract class AlterCommand {
+public abstract class AlterCommand extends Command{
 
     
 }
