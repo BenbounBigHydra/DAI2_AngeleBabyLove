@@ -8,6 +8,7 @@ public class Location {
     private String description;
     private boolean unlocked;
     private List<Puzzle> listPuzzles;
+    private List<Item> listItems;
     private Key requiredKey;
 
     public Location(String nameTransfer, String descripionTransfer, List<Puzzle> puzzlesTransfer, Key keyTransfer) {
