@@ -1,6 +1,7 @@
 package main.world;
 
 public class Worldmap {
+<<<<<<< Updated upstream
     private int[] playerPosition = new int[2];
     private Location[][] map;
 
@@ -15,3 +16,9 @@ public class Worldmap {
         playerPosition[1] = y;
     }
 }   
+=======
+    private Location[][] dimensions;
+    private int[] playerPosition = new int[2];
+    
+}
+>>>>>>> Stashed changes
