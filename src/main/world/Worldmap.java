@@ -5,8 +5,8 @@ public class Worldmap {
     private int[] playerPosition = new int[2];
     private Location[][] map;
 
-    public Worldmap(Location[][] loc) {
-        map = loc;
+    public Worldmap() {
+        
     }
 
     public int[] getPP() {

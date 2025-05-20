@@ -39,11 +39,24 @@ public class Location {
         return this.listPuzzles;
     }
 
+    public void removePuzzle (Puzzle puzzleToRemove) {
+        this.listPuzzles.remove(puzzleToRemove);
+    }
+
     public void addItems(List<Item> itemsToAdd) {
         this.listItems.addAll(itemsToAdd);
+    }
+
+    public void removeItem (Item itemToRemove) {
+        this.listItems.remove(itemToRemove);
     }
 
     public void unlock() {
         this.unlocked = true;
     }
-}
+
+    public boolean checkKey (Key keyToCheck) {
+        return this.requiredKey == keyToCheck;         
+        }
+    } 
+
