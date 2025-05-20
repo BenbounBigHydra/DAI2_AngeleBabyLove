@@ -30,7 +30,7 @@ public class Game {
         return this.commands;
     }
 
-    public Worldmap getMap(){
+    public Worldmap getWorldMap(){
         return this.map;
     }
 

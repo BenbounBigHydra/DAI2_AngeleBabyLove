@@ -25,7 +25,9 @@ public abstract class Command implements ICommand {
 
     public String execute() {
         String message = null;
-
+        message = this.executeCommand();
         return message;
     }
+
+    protected abstract String executeCommand();
 }

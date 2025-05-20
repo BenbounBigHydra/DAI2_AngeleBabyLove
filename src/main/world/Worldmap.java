@@ -6,7 +6,7 @@ public class Worldmap {
     private Location[][] map;
 
     public Worldmap() {
-        
+
     }
 
     public int[] getPP() {
@@ -16,5 +16,9 @@ public class Worldmap {
     public void setPP(int x, int y) {
         playerPosition[0] = x;
         playerPosition[1] = y;
+    }
+
+    public Location[][] getMap() {
+        return this.map;
     }
 }
