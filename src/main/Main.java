@@ -14,7 +14,7 @@ public class Main {
         do {
             System.out.print("What do you want to do : ");
 
-            String action = thisGame.getCommands().executeCommand(askSomething());
+            String action = thisGame.getCommandManager().executeCommand(askSomething());
 
             if (action == null) {
                 running = false;

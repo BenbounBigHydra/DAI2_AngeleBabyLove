@@ -6,24 +6,30 @@ import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
 import main.commands.alterCommands.MoveSouth;
 import main.commands.alterCommands.MoveWest;
+import main.commands.infosCommands.Look;
 import main.commands.infosCommands.MapDisplay;
 
 public class CommandManager {
 
-    private Set<Command> setCommands = new HashSet<>();
+    private Set<Command> setCommands;
+
+    public Set<Command> getSetCommands() {
+        return setCommands;
+    }
 
     public CommandManager() {
+        setCommands = new HashSet<>();
+
+        setCommands.add(new Help("Show you all commands", "help"));
+
         setCommands.add(new MoveEast("Allow you to move east", "moveeast"));
         setCommands.add(new MoveNorth("Allow you to move north", "movenorth"));
         setCommands.add(new MoveSouth("Allow you to move south", "movesouth"));
         setCommands.add(new MoveWest("Allow you to move west", "movewest"));
 
         setCommands.add(new MapDisplay("Display the map", "map"));
+        setCommands.add(new Look("Show you the place you're in", "look"));
         //Il faudra ajouter ici les autres commandes
-    }
-
-    public void addCommand(Command c) {
-        this.setCommands.add(c);
     }
 
     public String executeCommand(String brutCommand) {

@@ -1,9 +1,11 @@
 package main.world;
 
+import java.util.ArrayList;
 import java.util.List;
 import utils.IPrintable;
 
-public class Location implements IPrintable{
+public class Location implements IPrintable {
+
     private String name;
     private String description;
     private boolean unlocked;
@@ -17,6 +19,7 @@ public class Location implements IPrintable{
         this.unlocked = false;
         this.listPuzzles = puzzlesTransfer;
         this.requiredKey = keyTransfer;
+        this.listItems = new ArrayList<>();
     }
 
     public String getName() {
@@ -27,19 +30,19 @@ public class Location implements IPrintable{
         return this.description;
     }
 
-    public boolean getUnlockedState(){
+    public boolean getUnlockedState() {
         return this.unlocked;
     }
 
-    public List<Item> getListItems(){
+    public List<Item> getListItems() {
         return this.listItems;
     }
 
-    public List<Puzzle> getListPuzzle(){
+    public List<Puzzle> getListPuzzle() {
         return this.listPuzzles;
     }
 
-    public void removePuzzle (Puzzle puzzleToRemove) {
+    public void removePuzzle(Puzzle puzzleToRemove) {
         this.listPuzzles.remove(puzzleToRemove);
     }
 
@@ -47,7 +50,7 @@ public class Location implements IPrintable{
         this.listItems.addAll(itemsToAdd);
     }
 
-    public void removeItem (Item itemToRemove) {
+    public void removeItem(Item itemToRemove) {
         this.listItems.remove(itemToRemove);
     }
 
@@ -55,13 +58,11 @@ public class Location implements IPrintable{
         this.unlocked = true;
     }
 
-    public boolean checkKey (Key keyToCheck) {
-        return this.requiredKey == keyToCheck;         
-        }
-
+    public boolean checkKey(Key keyToCheck) {
+        return this.requiredKey == keyToCheck;
+    }
 
     //Ces deux méthodes sont implémentées pour IPrintable et rendent les locations imprimable
-
     @Override
     public String getPrintableString() {
         return this.name;
@@ -71,5 +72,4 @@ public class Location implements IPrintable{
     public boolean isGrayedOut() {
         return this.unlocked;
     }
-    } 
-
+}

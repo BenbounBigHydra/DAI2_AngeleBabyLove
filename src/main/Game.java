@@ -26,7 +26,7 @@ public class Game {
         //System.out.println("Initializing game...");
     }
 
-    public CommandManager getCommands(){
+    public CommandManager getCommandManager(){
         return this.commands;
     }
 

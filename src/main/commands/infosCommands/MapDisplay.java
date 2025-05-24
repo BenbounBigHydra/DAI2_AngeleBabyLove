@@ -14,7 +14,7 @@ public class MapDisplay extends InfosCommand {
     }
 
     @Override
-    protected String executeCommand() {
+    public String execute() {
         return Array2Dprinter.print2DArray(Game.getInstance().getWorldMap().getMap(), Game.getInstance().getWorldMap().getPP()[0], Game.getInstance().getWorldMap().getPP()[1]);
     }
 

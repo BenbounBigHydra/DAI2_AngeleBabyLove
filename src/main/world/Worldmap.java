@@ -1,11 +1,16 @@
 package main.world;
 
 public class Worldmap {
-    private int[] playerPosition = new int[2];
+
+    private int[] playerPosition;
     private Location[][] map;
 
     public Worldmap() {
+        //Crée la Map
         this.map = new Location[3][3];
+
+        //Crée et insère les Location dans la map
+        //(pour le moment elles sont normalisées pour tester le programme)
         int n = 0;
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
@@ -14,6 +19,9 @@ public class Worldmap {
                 n++;
             }
         }
+
+        //Défini la position du player
+        playerPosition = new int[2];
         playerPosition[0] = 0;
         playerPosition[1] = 0;
     }

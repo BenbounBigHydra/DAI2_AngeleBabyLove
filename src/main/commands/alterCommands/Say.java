@@ -7,7 +7,7 @@ public class Say extends AlterCommand{
     }
 
     @Override
-    protected String executeCommand() {
+    public String execute() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     

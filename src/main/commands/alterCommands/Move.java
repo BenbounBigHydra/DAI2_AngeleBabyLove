@@ -9,7 +9,7 @@ public abstract class Move extends AlterCommand {
     }
 
     @Override
-    public String executeCommand() {
+    public String execute() {
         int[] PP = Game.getInstance().getWorldMap().getPP();
         int[] futurePP = this.calculatePP(PP);
 

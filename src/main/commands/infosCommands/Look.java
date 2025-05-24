@@ -1,5 +1,8 @@
 package main.commands.infosCommands;
 
+import main.Game;
+import main.world.Item;
+
 public class Look extends InfosCommand {
     
     public Look(String descriptionTransfer, String actionTransfer) {
@@ -7,8 +10,14 @@ public class Look extends InfosCommand {
     }
 
     @Override
-    protected String executeCommand() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public String execute() {
+        String toReturn = Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getDescription();
+
+        for (Item item : Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getListItems()) {
+            toReturn = toReturn + System.lineSeparator() + item.getDescritpion();
+        }
+
+        return toReturn;
     }
     
 }

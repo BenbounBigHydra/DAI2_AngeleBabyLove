@@ -7,7 +7,7 @@ public class Inspect extends InfosCommand {
     }
 
     @Override
-    protected String executeCommand() {
+    public String execute() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
