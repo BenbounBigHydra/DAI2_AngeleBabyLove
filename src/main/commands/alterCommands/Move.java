@@ -9,7 +9,7 @@ public abstract class Move extends AlterCommand{
     }
     
     protected void movePlayer(int x, int y){
-        int[] PP = Game.getInstance().getMap().getPP();
+        int[] PP = Game.getInstance().getWorldMap().getPP();
     }
 
 }
