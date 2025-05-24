@@ -1,8 +1,9 @@
 package main.world;
 
 import java.util.List;
+import utils.IPrintable;
 
-public class Location {
+public class Location implements IPrintable{
     private String name;
     private String description;
     private boolean unlocked;
@@ -57,5 +58,18 @@ public class Location {
     public boolean checkKey (Key keyToCheck) {
         return this.requiredKey == keyToCheck;         
         }
+
+
+    //Ces deux méthodes sont implémentées pour IPrintable et rendent les locations imprimable
+
+    @Override
+    public String getPrintableString() {
+        return this.name;
+    }
+
+    @Override
+    public boolean isGrayedOut() {
+        return this.unlocked;
+    }
     } 
 

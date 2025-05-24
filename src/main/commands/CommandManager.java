@@ -6,6 +6,7 @@ import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
 import main.commands.alterCommands.MoveSouth;
 import main.commands.alterCommands.MoveWest;
+import main.commands.infosCommands.MapDisplay;
 
 public class CommandManager {
 
@@ -16,6 +17,8 @@ public class CommandManager {
         setCommands.add(new MoveNorth("Allow you to move north", "movenorth"));
         setCommands.add(new MoveSouth("Allow you to move south", "movesouth"));
         setCommands.add(new MoveWest("Allow you to move west", "movewest"));
+
+        setCommands.add(new MapDisplay("Display the map", "map"));
         //Il faudra ajouter ici les autres commandes
     }
 

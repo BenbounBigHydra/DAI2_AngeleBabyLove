@@ -6,10 +6,12 @@ public class Worldmap {
 
     public Worldmap() {
         this.map = new Location[3][3];
+        int n = 0;
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
-                map[i][j] = new Location("Location n° " + (i + j), "Description de la Location " + (i + j), null, null);
+                map[i][j] = new Location("Location n° " + n, "Description de la Location " + n, null, null);
                 map[i][j].unlock();
+                n++;
             }
         }
         playerPosition[0] = 0;

@@ -8,6 +8,6 @@ public class MoveSouth extends Move {
 
     @Override
     protected int[] calculatePP(int[] actualPosition) {
-        return new int[]{actualPosition[0] - 1, actualPosition[1]};
+        return new int[]{actualPosition[0] + 1, actualPosition[1]};
     }
 }
