@@ -4,7 +4,9 @@ import java.text.Normalizer;
 
 public abstract class Command implements ICommand {
 
+    @SuppressWarnings("FieldMayBeFinal")
     private String description;
+    @SuppressWarnings("FieldMayBeFinal")
     private String action;
 
     public Command(String descriptionTransfer, String actionTransfer) {
@@ -24,8 +26,7 @@ public abstract class Command implements ICommand {
     }
 
     public String execute() {
-        String message = null;
-        message = this.executeCommand();
+        String message = this.executeCommand();
         return message;
     }
 

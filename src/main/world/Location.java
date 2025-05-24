@@ -3,7 +3,6 @@ package main.world;
 import java.util.List;
 
 public class Location {
-
     private String name;
     private String description;
     private boolean unlocked;

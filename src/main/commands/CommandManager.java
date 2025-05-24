@@ -2,13 +2,25 @@ package main.commands;
 
 import java.text.Normalizer;
 import java.util.*;
+import main.commands.alterCommands.MoveEast;
+import main.commands.alterCommands.MoveNorth;
+import main.commands.alterCommands.MoveSouth;
+import main.commands.alterCommands.MoveWest;
 
 public class CommandManager {
 
-    private List<Command> listCommands = new ArrayList<>();
+    private Set<Command> setCommands = new HashSet<>();
+
+    public CommandManager() {
+        setCommands.add(new MoveEast("Allow you to move east", "moveeast"));
+        setCommands.add(new MoveNorth("Allow you to move north", "movenorth"));
+        setCommands.add(new MoveSouth("Allow you to move south", "movesouth"));
+        setCommands.add(new MoveWest("Allow you to move west", "movewest"));
+        //Il faudra ajouter ici les autres commandes
+    }
 
     public void addCommand(Command c) {
-        this.listCommands.add(c);
+        this.setCommands.add(c);
     }
 
     public String executeCommand(String brutCommand) {
@@ -16,7 +28,11 @@ public class CommandManager {
 
         Command commandToExecute = this.translateCommand(brutCommand);
 
-        commandToExecute.execute();
+        if (commandToExecute != null) {
+            message = commandToExecute.execute();
+        } else {
+            message = "This command doesn't exist";
+        }
 
         return message;
     }
@@ -26,8 +42,8 @@ public class CommandManager {
         normalized = Normalizer.normalize(normalized, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
         normalized = normalized.replaceAll("[^A-Za-z]", "");
 
-        for (Command c : this.listCommands) {
-            if (c.getAction() == normalized) {
+        for (Command c : this.setCommands) {
+            if (c.getAction().equals(normalized)) {
                 return c;
             }
         }

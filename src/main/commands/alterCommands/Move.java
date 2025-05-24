@@ -12,6 +12,7 @@ public abstract class Move extends AlterCommand {
     public String executeCommand() {
         int[] PP = Game.getInstance().getWorldMap().getPP();
         int[] futurePP = this.calculatePP(PP);
+
         boolean canMove = this.checkMapBorder(futurePP);
         if (!canMove) {
             return "You've reach the end of the map.";
@@ -24,6 +25,11 @@ public abstract class Move extends AlterCommand {
             return "This location is locked";
         }
 
+        canMove = Game.getInstance().getWorldMap().getMap()[futurePP[0]][futurePP[1]] != null;
+        if (!canMove) {
+            return "There is no location here";
+        }
+
         Game.getInstance().getWorldMap().setPP(futurePP[0], futurePP[1]);
 
         return "You've enter a new Location";
@@ -32,7 +38,7 @@ public abstract class Move extends AlterCommand {
     protected abstract int[] calculatePP(int[] actualPosition);
 
     private boolean checkMapBorder(int[] futurePP) { //Check tous les bords de la map 
-        return futurePP[0] <= Game.getInstance().getWorldMap().getMap().length && futurePP[0] >= 0 && futurePP[1] <= Game.getInstance().getWorldMap().getMap()[0].length && futurePP[1] >= 0;
+        return futurePP[0] < Game.getInstance().getWorldMap().getMap().length && futurePP[0] >= 0 && futurePP[1] < Game.getInstance().getWorldMap().getMap()[0].length && futurePP[1] >= 0;
     }
 
 }
