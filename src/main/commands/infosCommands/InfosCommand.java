@@ -8,4 +8,8 @@ public abstract class InfosCommand extends Command  {
         super(descriptionTransfer, actionTransfer);
     }
     
+    @Override
+    protected int noToCompare(){
+        return 2;
+    }
 }

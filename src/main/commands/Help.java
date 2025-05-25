@@ -18,5 +18,9 @@ public class Help extends Command{
 
         return toReturn;
     }
-    
+
+    @Override
+    protected int noToCompare(){
+        return 1;
+    }
 }

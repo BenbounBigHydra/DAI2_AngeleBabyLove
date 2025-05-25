@@ -8,4 +8,8 @@ public abstract class AlterCommand extends Command{
         super(descriptionTransfer, actionTransfer);
     }
     
+    @Override
+    protected int noToCompare(){
+        return 3;
+    }
 }

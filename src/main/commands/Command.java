@@ -2,11 +2,9 @@ package main.commands;
 
 import java.text.Normalizer;
 
-public abstract class Command implements ICommand {
+public abstract class Command implements ICommand, Comparable<Command> {
 
-    @SuppressWarnings("FieldMayBeFinal")
     private String description;
-    @SuppressWarnings("FieldMayBeFinal")
     private String action;
 
     public Command(String descriptionTransfer, String actionTransfer) {
@@ -24,4 +22,16 @@ public abstract class Command implements ICommand {
     public String getAction() {
         return this.action;
     }
+
+    @Override
+    public int compareTo(Command c) {
+        int diff = this.noToCompare()-c.noToCompare();
+        if (diff != 0) {
+            return diff;
+        }else{
+            return this.getAction().compareTo(c.getAction());
+        }
+    }
+
+    protected abstract int noToCompare();
 }

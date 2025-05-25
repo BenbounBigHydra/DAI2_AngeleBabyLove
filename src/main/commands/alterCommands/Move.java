@@ -40,5 +40,4 @@ public abstract class Move extends AlterCommand {
     private boolean checkMapBorder(int[] futurePP) { //Check tous les bords de la map 
         return futurePP[0] < Game.getInstance().getWorldMap().getMap().length && futurePP[0] >= 0 && futurePP[1] < Game.getInstance().getWorldMap().getMap()[0].length && futurePP[1] >= 0;
     }
-
 }

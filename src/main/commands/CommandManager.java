@@ -18,7 +18,7 @@ public class CommandManager {
     }
 
     public CommandManager() {
-        setCommands = new HashSet<>();
+        setCommands = new TreeSet<>();
 
         setCommands.add(new Help("Show you all commands", "help"));
 
