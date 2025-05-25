@@ -42,6 +42,10 @@ public class Location implements IPrintable {
         return this.listPuzzles;
     }
 
+    public Key getRequiredKey() {
+        return requiredKey;
+    }
+
     public void removePuzzle(Puzzle puzzleToRemove) {
         this.listPuzzles.remove(puzzleToRemove);
     }

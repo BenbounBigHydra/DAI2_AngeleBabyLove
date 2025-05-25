@@ -28,10 +28,9 @@ public class Main {
 
     public static String askSomething() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        String asked = null;
-
-        asked = scanner.nextLine();
         
+        String asked = scanner.nextLine();
+
         return asked;
     }
 }

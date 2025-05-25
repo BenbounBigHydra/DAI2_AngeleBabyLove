@@ -1,8 +1,8 @@
 package main.commands.infosCommands;
 
-public class List extends InfosCommand {
+public class ListInventory extends InfosCommand {
     
-    public List(String descriptionTransfer, String actionTransfer) {
+    public ListInventory(String descriptionTransfer, String actionTransfer) {
         super(descriptionTransfer, actionTransfer);
     }
 

@@ -6,6 +6,11 @@ import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
 import main.commands.alterCommands.MoveSouth;
 import main.commands.alterCommands.MoveWest;
+import main.commands.alterCommands.Say;
+import main.commands.alterCommands.Take;
+import main.commands.alterCommands.Use;
+import main.commands.infosCommands.Inspect;
+import main.commands.infosCommands.ListInventory;
 import main.commands.infosCommands.Look;
 import main.commands.infosCommands.MapDisplay;
 
@@ -29,7 +34,13 @@ public class CommandManager {
 
         setCommands.add(new MapDisplay("Display the map", "map"));
         setCommands.add(new Look("Show you the place you're in", "look"));
-        //Il faudra ajouter ici les autres commandes
+
+        //Encore à coder
+        setCommands.add(new ListInventory("Show items in the inventory", "list"));
+        setCommands.add(new Inspect("Allow you to inspect an item in your inventory", "inspect"));
+        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "say"));
+        setCommands.add(new Take("Allow you to take an item", "take"));
+        setCommands.add(new Use("Allow you to use keys to unlock locations", "use"));
     }
 
     public String executeCommand(String brutCommand) {
