@@ -14,22 +14,22 @@ public class Worldmap {
 
         //Crée et insère les Location dans la map
         //(pour le moment elles sont normalisées pour tester le programme)
-        map[0][0] = new Location("Jardin", "Le jardin de la maison", null, null);
+        map[0][0] = new Location("Garden", "The house's garden", null, null);
         map[0][0].unlock();
-        map[0][1] = new Location("Jardin", "Le jardin de la maison", null, null);
+        map[0][1] = new Location("Garden", "The house's garden", null, null);
         map[0][1].unlock();
-        map[0][2] = new Location("Jardin", "Le jardin de la maison", null, null);
+        map[0][2] = new Location("Garden", "The house's garden", null, null);
         map[0][2].unlock();
-        map[1][0] = new Location("Jardin", "Le jardin de la maison", null, null);
+        map[1][0] = new Location("Garden", "The house's garden", null, null);
         map[1][0].unlock();
-        map[1][1] = new Location("Maison", "La maison", null, new Key("La clé de la maison"));
-        map[1][2] = new Location("Jardin", "Le jardin de la maison", null, null);
+        map[1][1] = new Location("House", "The house", null, new Key("The house's key"));
+        map[1][2] = new Location("Garden", "The house's garden", null, null);
         map[1][2].unlock();
-        map[2][0] = new Location("Forêt", "La forêt qui jouxte la maison", null, null);
+        map[2][0] = new Location("Forest", "La forêt qui jouxte la maison", null, null);
         map[2][0].unlock();
-        map[2][1] = new Location("Forêt", "La forêt qui jouxte la maison", null, null);
+        map[2][1] = new Location("Forest", "La forêt qui jouxte la maison", null, null);
         map[2][1].unlock();
-        map[2][2] = new Location("Cabanon", "Le cabanon au fond du jardin", null, null);
+        map[2][2] = new Location("Cottage", "Le cabanon au fond du jardin", null, null);
         map[2][2].unlock();
         
         List<Item> toAdd = new ArrayList<>();
