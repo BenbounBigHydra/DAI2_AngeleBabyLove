@@ -34,12 +34,12 @@ public class CommandManager {
 
         setCommands.add(new MapDisplay("Display the map", "map"));
         setCommands.add(new Look("Show you the place you're in", "look"));
+        setCommands.add(new ListInventory("Show items in the inventory", "list"));
+        setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "inspect"));
 
         //Encore à coder
-        setCommands.add(new ListInventory("Show items in the inventory", "list"));
-        setCommands.add(new Inspect("Allow you to inspect an item in your inventory", "inspect"));
         setCommands.add(new Say("Allow you to propose an answer for a puzzle", "say"));
-        setCommands.add(new Take("Allow you to take an item", "take"));
+        setCommands.add(new Take("Allow you to take an item to add in your inventory", "take"));
         setCommands.add(new Use("Allow you to use keys to unlock locations", "use"));
     }
 

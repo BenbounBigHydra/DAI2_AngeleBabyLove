@@ -8,7 +8,7 @@ public class Use extends AlterCommand{
 
     @Override
     public String execute() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "Pas encore codé";
     }
     
 }

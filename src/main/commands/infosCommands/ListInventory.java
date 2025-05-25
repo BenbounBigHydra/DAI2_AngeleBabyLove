@@ -1,14 +1,32 @@
 package main.commands.infosCommands;
 
+import java.security.Key;
+import main.Game;
+import main.world.Item;
+
 public class ListInventory extends InfosCommand {
-    
+
     public ListInventory(String descriptionTransfer, String actionTransfer) {
         super(descriptionTransfer, actionTransfer);
     }
 
     @Override
     public String execute() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (Game.getInstance().getPlayer().getInventory().getListItemInInventory().isEmpty()) {
+            return "Your inventory is empty";
+        } else {
+            String toReturn = "Your inventory : " + System.lineSeparator();
+            int n = 0;
+            for (Item i : Game.getInstance().getPlayer().getInventory().getListItemInInventory()) {
+                if (i instanceof Key) {
+                    toReturn = toReturn + "Item " + n + " (Key) : " + i.getDescritpion() + System.lineSeparator();
+                } else {
+                    toReturn = toReturn + "Item " + n + " (Letter) : " + i.getDescritpion() + System.lineSeparator();
+                }
+                n++;
+            }
+            return toReturn;
+        }
     }
-    
+
 }
