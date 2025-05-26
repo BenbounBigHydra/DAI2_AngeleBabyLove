@@ -14,15 +14,15 @@ public class Worldmap {
 
         //Crée et insère les Location dans la map
         //(pour le moment elles sont normalisées pour tester le programme)
-        map[0][0] = new Location("Garden", "The house's garden", null, null);
+        map[0][0] = new Location("School", "The working place", null, null);
         map[0][0].unlock();
-        map[0][1] = new Location("Garden", "The house's garden", null, null);
+        map[0][1] = new Location("Chill", "The best place on earth", null, new Key("The chill's key"));
         map[0][1].unlock();
-        map[0][2] = new Location("Garden", "The house's garden", null, null);
+        map[0][2] = new Location("Cafeteria", "The place to eat sweets and drink lots of coffee", null, null);
         map[0][2].unlock();
-        map[1][0] = new Location("Garden", "The house's garden", null, null);
+        map[1][0] = new Location("School", "The building lobby", null, null);
         map[1][0].unlock();
-        map[1][1] = new Location("House", "The house", null, new Key("The house's key"));
+        map[1][1] = new Location("Court", "The place where a majestic fountain stands", null, null);
         map[1][2] = new Location("Garden", "The house's garden", null, null);
         map[1][2].unlock();
         map[2][0] = new Location("Forest", "The forest next to the house", null, null);
