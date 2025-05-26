@@ -17,14 +17,12 @@ public class Worldmap {
         map[0][0] = new Location("School", "The working place", null, null);
         map[0][0].unlock();
         map[0][1] = new Location("Chill", "The best place on earth", null, new Key("The chill's key"));
-        map[0][1].unlock();
         map[0][2] = new Location("Cafeteria", "The place to eat sweets and drink lots of coffee", null, null);
-        map[0][2].unlock();
         map[1][0] = new Location("School", "The building lobby", null, null);
         map[1][0].unlock();
         map[1][1] = new Location("Court", "The place where a majestic fountain stands", null, null);
+        map[1][1].unlock();
         map[1][2] = new Location("Cafeteria", "The Gertrude's Cafeteria", null, new Key("The Cafeteria's key"));
-        map[1][2].unlock();
         map[2][0] = new Location("School", "The building lobby", null, null);
         map[2][0].unlock();
         map[2][1] = new Location("Court", "The concrete courtyard", null, null);
