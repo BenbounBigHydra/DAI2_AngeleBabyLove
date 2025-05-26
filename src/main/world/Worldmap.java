@@ -36,8 +36,8 @@ public class Worldmap {
 
         //Défini la position du player
         playerPosition = new int[2];
-        playerPosition[0] = 0;
-        playerPosition[1] = 0;
+        playerPosition[0] = 2;
+        playerPosition[1] = 2;
     }
 
     public int[] getPP() {
