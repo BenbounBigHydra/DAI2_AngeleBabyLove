@@ -1,7 +1,7 @@
 package main.commands;
 
-import java.text.Normalizer;
 import java.util.*;
+import main.Main;
 import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
 import main.commands.alterCommands.MoveSouth;
@@ -31,6 +31,7 @@ public class CommandManager {
         setCommands.add(new MoveNorth("Allow you to move north", "movenorth"));
         setCommands.add(new MoveSouth("Allow you to move south", "movesouth"));
         setCommands.add(new MoveWest("Allow you to move west", "movewest"));
+        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "say"));
 
         setCommands.add(new MapDisplay("Display the map", "map"));
         setCommands.add(new Look("Show you the place you're in", "look"));
@@ -38,7 +39,6 @@ public class CommandManager {
         setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "inspect"));
 
         //Encore à coder
-        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "say"));
         setCommands.add(new Take("Allow you to take an item to add in your inventory", "take"));
         setCommands.add(new Use("Allow you to use keys to unlock locations", "use"));
     }
@@ -58,9 +58,7 @@ public class CommandManager {
     }
 
     private Command translateCommand(String brutCommand) {
-        String normalized = brutCommand.toLowerCase();
-        normalized = Normalizer.normalize(normalized, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
-        normalized = normalized.replaceAll("[^A-Za-z]", "");
+        String normalized = Main.normalizeString(brutCommand);
 
         for (Command c : this.setCommands) {
             if (c.getAction().equals(normalized)) {

@@ -1,5 +1,6 @@
 package main;
 
+import java.text.Normalizer;
 import utils.Color;
 import utils.StringStyling;
 import utils.Style;
@@ -28,9 +29,17 @@ public class Main {
 
     public static String askSomething() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        
+
         String asked = scanner.nextLine();
 
         return asked;
+    }
+
+    public static String normalizeString(String unnormalized) {
+        String normalized = unnormalized.toLowerCase();
+        normalized = Normalizer.normalize(normalized, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+        normalized = normalized.replaceAll("[^A-Za-z]", "");
+
+        return normalized;
     }
 }

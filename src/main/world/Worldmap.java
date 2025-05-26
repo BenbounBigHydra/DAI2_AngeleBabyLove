@@ -14,9 +14,9 @@ public class Worldmap {
 
         //Crée et insère les Location dans la map
         //(pour le moment elles sont normalisées pour tester le programme)
-        map[0][0] = new Location("Garden", "The house's garden", null, null);
+        map[0][0] = new Location("School", "This is the working area of Cheseaux", null, null);
         map[0][0].unlock();
-        map[0][1] = new Location("Garden", "The house's garden", null, null);
+        map[0][1] = new Location("School", "This is the entrance of Cheseaux", null, null);
         map[0][1].unlock();
         map[0][2] = new Location("Garden", "The house's garden", null, null);
         map[0][2].unlock();
@@ -38,8 +38,8 @@ public class Worldmap {
 
         //Défini la position du player
         playerPosition = new int[2];
-        playerPosition[0] = 0;
-        playerPosition[1] = 0;
+        playerPosition[0] = 2;
+        playerPosition[1] = 2;
     }
 
     public int[] getPP() {

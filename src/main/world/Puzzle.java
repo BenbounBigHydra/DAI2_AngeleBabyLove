@@ -1,15 +1,22 @@
 package main.world;
 
 import java.util.List;
+import main.Main;
 
 public class Puzzle {
 
     private String solution;
+    private String saidWhenResolved;
     private List<Item> reward;
 
-    public Puzzle(String solutionT, List<Item> rewardT) {
-        this.solution = solutionT;
+    public Puzzle(String solutionT, String saidWhenResolvedT, List<Item> rewardT) {
+        this.solution = Main.normalizeString(solutionT);
+        this.saidWhenResolved = saidWhenResolvedT;
         this.reward = rewardT;
+    }
+
+    public String getSaidWhenResolved() {
+        return saidWhenResolved;
     }
 
     public List<Item> getReward() {
