@@ -27,7 +27,7 @@ public class Use extends AlterCommand {
         } else {
             int a = 0;
             for (Item i : keys) {
-                System.out.println("Key " + a + " : " + i.getDescritpion());
+                System.out.println("Key " + a + " : " + i.getDescription());
             }
             boolean verif = true;
             do {

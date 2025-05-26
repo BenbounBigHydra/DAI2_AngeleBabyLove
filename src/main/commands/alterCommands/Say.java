@@ -16,7 +16,7 @@ public class Say extends AlterCommand {
     public String execute() {
         List<Puzzle> listPuzzles = Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getListPuzzle();
         System.out.println("What's your answer ?");
-        String answer = Main.askSomething();
+        String answer = Main.normalizeString(Main.askSomething());
         if (listPuzzles != null) {
             for (Puzzle p : listPuzzles) {
                 if (answer.equals(p.getSolution())) {

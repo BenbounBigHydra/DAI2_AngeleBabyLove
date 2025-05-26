@@ -19,7 +19,7 @@ public class Take extends AlterCommand {
         } else {
             int n = 1;
             for (Item i : currentLoc.getListItems()) {
-                System.out.println("Item " + n + " : " + i.getDescritpion());
+                System.out.println("Item " + n + " : " + i.getDescription());
             }
             boolean verif = true;
             int number = 0;
@@ -29,7 +29,7 @@ public class Take extends AlterCommand {
                     String numberStr = Main.askSomething();
                     number = Integer.parseInt(numberStr) - 1;
                     verif = false;
-                    if (number >= currentLoc.getListItems().size()) {
+                    if (number >= currentLoc.getListItems().size() || number < 0) {
                         verif = true;
                         System.out.println("This item is not in the location");
                     }

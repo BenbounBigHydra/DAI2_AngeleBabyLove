@@ -24,6 +24,8 @@ public class Main {
             }
         } while (running);
 
+        System.out.println("Congratulation ! You entered the chill and found all the beer");
+
         System.out.println(StringStyling.StyleString("Terminating...", Style.ITALIC, Color.BLACK));
     }
 

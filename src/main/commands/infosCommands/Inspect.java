@@ -25,9 +25,9 @@ public class Inspect extends InfosCommand {
         if (letters.isEmpty()) {
             return "You have no letter to inspect";
         } else {
-            int a = 0;
+            int a = 1;
             for (Item i : letters) {
-                System.out.println("Lettre " + a + " : " + i.getDescritpion());
+                System.out.println("Lettre " + a + " : " + i.getDescription());
                 a++;
             }
             boolean verif = true;
@@ -37,7 +37,7 @@ public class Inspect extends InfosCommand {
                     String numberStr = Main.askSomething();
                     number = Integer.parseInt(numberStr) - 1;
                     verif = false;
-                    if (number >= letters.size()) {
+                    if (number >= letters.size() || number < 0) {
                         verif = true;
                         System.out.println("This letter is not on the list");
                     }

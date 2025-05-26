@@ -13,11 +13,12 @@ public class Location implements IPrintable {
     private List<Item> listItems;
     private Key requiredKey;
 
-    public Location(String nameTransfer, String descripionTransfer, List<Puzzle> puzzlesTransfer, Key keyTransfer) {
+    public Location(String nameTransfer, String descripionTransfer, Puzzle puzzlesTransfer, Key keyTransfer) {
         this.name = nameTransfer;
         this.description = descripionTransfer;
         this.unlocked = false;
-        this.listPuzzles = puzzlesTransfer;
+        this.listPuzzles = new ArrayList<>();
+        this.listPuzzles.add(puzzlesTransfer);
         this.requiredKey = keyTransfer;
         this.listItems = new ArrayList<>();
     }
@@ -52,6 +53,10 @@ public class Location implements IPrintable {
 
     public void addItems(List<Item> itemsToAdd) {
         this.listItems.addAll(itemsToAdd);
+    }
+
+    public void addItems(Item itemsToAdd) {
+        this.listItems.add(itemsToAdd);
     }
 
     public void removeItem(Item itemToRemove) {
