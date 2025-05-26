@@ -25,11 +25,11 @@ public class Worldmap {
         map[1][1] = new Location("Court", "The place where a majestic fountain stands", null, null);
         map[1][2] = new Location("Cafeteria", "The Gertrude's Cafeteria", null, new Key("The Cafeteria's key"));
         map[1][2].unlock();
-        map[2][0] = new Location("Forest", "The forest next to the house", null, null);
+        map[2][0] = new Location("School", "The building lobby", null, null);
         map[2][0].unlock();
-        map[2][1] = new Location("Forest", "The forest next to the house", null, null);
+        map[2][1] = new Location("Court", "The concrete courtyard", null, null);
         map[2][1].unlock();
-        map[2][2] = new Location("Cottage", "The cottage at the bottom of the garden", null, null);
+        map[2][2] = new Location("Court", "The concrete courtyard", null, null);
         map[2][2].unlock();
         
         List<Item> toAdd = new ArrayList<>();
