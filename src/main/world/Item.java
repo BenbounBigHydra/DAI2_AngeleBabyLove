@@ -2,13 +2,13 @@ package main.world;
 
 public abstract class Item {
 
-    private String descritpion;
+    private String description;
 
     public Item(String desc) {
-        this.descritpion = desc;
+        this.description = desc;
     }
 
-    public String getDescritpion() {
-        return descritpion;
+    public String getDescription() {
+        return description;
     }
 }

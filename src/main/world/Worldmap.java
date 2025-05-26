@@ -11,6 +11,7 @@ public class Worldmap {
     public Worldmap() {
         //Crée la Map
         new Puzzle("Chill", "You just found the key of the Cafeteria.", null);
+        new Puzzle("7", "Oh thank you for your help! I was going to be late for my non-existent class. For your information, I saw Léo leaving a letter for Jerem in the cafeteria. You should pick it up before he finds it. ", null);
         this.map = new Location[3][3];
 
         //Crée et insère les Location dans la map
@@ -21,7 +22,7 @@ public class Worldmap {
         map[0][2] = new Location("Cafeteria", "The place to eat sweets and drink lots of coffee", null, null);
         map[1][0] = new Location("School", "The building lobby", null, null);
         map[1][0].unlock();
-        map[1][1] = new Location("Court", "The place where a majestic fountain stands", null, null);
+        map[1][1] = new Location("Court", "The shadow of the majestic fountain can be seen on the 7", null, null);
         map[1][1].unlock();
         map[1][2] = new Location("Cafeteria", "The Gertrude's Cafeteria", null, new Key("The Cafeteria's key"));
         map[2][0] = new Location("School", "The building lobby", null, null);

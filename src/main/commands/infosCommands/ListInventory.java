@@ -19,9 +19,9 @@ public class ListInventory extends InfosCommand {
             int n = 0;
             for (Item i : Game.getInstance().getPlayer().getInventory().getListItemInInventory()) {
                 if (i instanceof Key) {
-                    toReturn = toReturn + "Item " + n + " (Key) : " + i.getDescritpion() + System.lineSeparator();
+                    toReturn = toReturn + "Item " + n + " (Key) : " + i.getDescription() + System.lineSeparator();
                 } else {
-                    toReturn = toReturn + "Item " + n + " (Letter) : " + i.getDescritpion() + System.lineSeparator();
+                    toReturn = toReturn + "Item " + n + " (Letter) : " + i.getDescription() + System.lineSeparator();
                 }
                 n++;
             }
