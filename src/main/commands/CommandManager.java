@@ -37,9 +37,9 @@ public class CommandManager {
         setCommands.add(new Look("Show you the place you're in", "look"));
         setCommands.add(new ListInventory("Show items in the inventory", "list"));
         setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "inspect"));
+        setCommands.add(new Take("Allow you to take an item to add in your inventory", "take"));
 
         //Encore à coder
-        setCommands.add(new Take("Allow you to take an item to add in your inventory", "take"));
         setCommands.add(new Use("Allow you to use keys to unlock locations", "use"));
     }
 

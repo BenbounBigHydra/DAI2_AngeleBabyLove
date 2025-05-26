@@ -25,8 +25,10 @@ public class Inspect extends InfosCommand {
         if (letters.isEmpty()) {
             return "You have no letter to inspect";
         } else {
+            int a = 0;
             for (Item i : letters) {
-                System.out.println("Lettre 1 : " + i.getDescritpion());
+                System.out.println("Lettre " + a + " : " + i.getDescritpion());
+                a++;
             }
             boolean verif = true;
             do {
