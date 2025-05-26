@@ -10,6 +10,7 @@ public class Worldmap {
 
     public Worldmap() {
         //Crée la Map
+        new Puzzle("Chill", "You just found the key of the Cafeteria.", null);
         this.map = new Location[3][3];
 
         //Crée et insère les Location dans la map
