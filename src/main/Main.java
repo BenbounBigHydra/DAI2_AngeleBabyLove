@@ -6,7 +6,7 @@ import utils.StringStyling;
 import utils.Style;
 
 public class Main {
-
+    
     public static void main(String[] args) {
         System.out.println(StringStyling.StyleString("Starting...", Style.ITALIC, Color.BLACK));
         Game thisGame = Game.getInstance();

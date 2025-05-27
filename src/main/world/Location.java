@@ -18,7 +18,9 @@ public class Location implements IPrintable {
         this.description = descripionTransfer;
         this.unlocked = false;
         this.listPuzzles = new ArrayList<>();
-        this.listPuzzles.add(puzzlesTransfer);
+        if (puzzlesTransfer != null) {
+            this.listPuzzles.add(puzzlesTransfer);
+        }
         this.requiredKey = keyTransfer;
         this.listItems = new ArrayList<>();
     }
@@ -68,7 +70,11 @@ public class Location implements IPrintable {
     }
 
     public boolean checkKey(Key keyToCheck) {
-        return this.requiredKey == keyToCheck;
+        if (this.requiredKey != null) {
+            return this.requiredKey.equals(keyToCheck);
+        } else {
+            return false;
+        }
     }
 
     //Ces deux méthodes sont implémentées pour IPrintable et rendent les locations imprimable

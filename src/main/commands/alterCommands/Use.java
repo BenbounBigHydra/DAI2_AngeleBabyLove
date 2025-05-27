@@ -25,7 +25,7 @@ public class Use extends AlterCommand {
         if (keys.isEmpty()) {
             return "You have no key to use";
         } else {
-            int a = 0;
+            int a = 1;
             for (Item i : keys) {
                 System.out.println("Key " + a + " : " + i.getDescription());
             }
@@ -36,7 +36,7 @@ public class Use extends AlterCommand {
                     String numberStr = Main.askSomething();
                     number = Integer.parseInt(numberStr) - 1;
                     verif = false;
-                    if (number >= keys.size()) {
+                    if (number >= keys.size() || number < 0) {
                         verif = true;
                         System.out.println("This key is not on the list");
                     }
@@ -77,7 +77,7 @@ public class Use extends AlterCommand {
 
     private boolean checkKeyOnOneLoc(int x, int y, Key keyToUse) {
         Location[][] currentMap = Game.getInstance().getWorldMap().getMap();
-        if (currentMap.length <= x && currentMap[0].length <= y) {
+        if (currentMap.length > x && currentMap[0].length > y && x >= 0 && y >= 0) {
             return currentMap[x][y].checkKey(keyToUse);
         } else {
             return false;
