@@ -23,7 +23,7 @@ public class Worldmap {
         //Créer le puzzle 2 et ajouter les clés
         reward.clear();
         reward.add(keyCafet);
-        Puzzle puzzleOfSteveHour = new Puzzle("7", "Oh thank you for your help! I was going to be late for my non-existent class. For your information, I saw Léo leaving a letter for Jerem in the cafeteria. You should pick it up before he finds it. ", reward);
+        Puzzle puzzleOfSteveHour = new Puzzle("seven", "Oh thank you for your help! I was going to be late for my non-existent class. For your information, I saw Léo leaving a letter for Jerem in the cafeteria. You should pick it up before he finds it. ", reward);
         //Créer les lettres
         Letter letterSteve = new Letter("A letter smelling fish", "Hello there ! I have a lesson soon but I have no idea wshat time it is. Could you tell me, I lost my phone and I'm currently working on...well nothing but...you see");
         Letter letterLeo = new Letter("A well folded letter", "Hey Jerem ! I left the key of the chill hidden in our favourite machine of the cafeteria. You can grab it next time.");
@@ -37,7 +37,7 @@ public class Worldmap {
         map[0][2].unlock();
         map[1][0] = new Location("School", "The building lobby", null, null);
         map[1][0].unlock();
-        map[1][1] = new Location("Court", "The shadow of the majestic fountain can be seen on the 7", null, null);
+        map[1][1] = new Location("Court", "The shadow of the majestic fountain can be seen on the seven", null, null);
         map[1][1].unlock();
         map[1][2] = new Location("Cafeteria", "The Gertrude's Cafeteria", null, keyCafet);
         map[1][2].addItems(letterLeo);
