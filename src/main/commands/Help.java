@@ -1,6 +1,9 @@
 package main.commands;
 
 import main.Game;
+import utils.Color;
+import utils.StringStyling;
+import utils.Style;
 
 public class Help extends Command{
 
@@ -13,7 +16,7 @@ public class Help extends Command{
         String toReturn = "";
 
         for (Command c : Game.getInstance().getCommandManager().getSetCommands()) {
-            toReturn = toReturn + c.getAction() + " : " + c.getDescription() + System.lineSeparator();
+            toReturn = toReturn + StringStyling.StyleString(c.getAction(), Style.BOLD, Color.GREEN) + " : " + c.getDescription() + System.lineSeparator();
         }
 
         return toReturn;

@@ -25,20 +25,20 @@ public class CommandManager {
     public CommandManager() {
         setCommands = new TreeSet<>();
 
-        setCommands.add(new Help("Show you all commands", "help"));
+        setCommands.add(new Help("Show you all commands", "Help"));
 
-        setCommands.add(new MoveEast("Allow you to move east", "moveeast"));
-        setCommands.add(new MoveNorth("Allow you to move north", "movenorth"));
-        setCommands.add(new MoveSouth("Allow you to move south", "movesouth"));
-        setCommands.add(new MoveWest("Allow you to move west", "movewest"));
-        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "say"));
-        setCommands.add(new Take("Allow you to take an item to add in your inventory", "take"));
-        setCommands.add(new Use("Allow you to use keys to unlock locations", "use"));
+        setCommands.add(new MoveEast("Allow you to move east", "Move East"));
+        setCommands.add(new MoveNorth("Allow you to move north", "Move North"));
+        setCommands.add(new MoveSouth("Allow you to move south", "Move South"));
+        setCommands.add(new MoveWest("Allow you to move west", "Move West"));
+        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "Say"));
+        setCommands.add(new Take("Allow you to take an item to add in your inventory", "Take"));
+        setCommands.add(new Use("Allow you to use keys to unlock locations", "Use"));
 
-        setCommands.add(new MapDisplay("Display the map", "map"));
-        setCommands.add(new Look("Show you the place you're in", "look"));
-        setCommands.add(new ListInventory("Show items in the inventory", "list"));
-        setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "inspect"));
+        setCommands.add(new MapDisplay("Display the map", "Map"));
+        setCommands.add(new Look("Show you the place you're in", "Look"));
+        setCommands.add(new ListInventory("Show items in the inventory", "List"));
+        setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "Inspect"));
     }
 
     public String executeCommand(String brutCommand) {
@@ -59,7 +59,7 @@ public class CommandManager {
         String normalized = Main.normalizeString(brutCommand);
 
         for (Command c : this.setCommands) {
-            if (c.getAction().equals(normalized)) {
+            if (Main.normalizeString(c.getAction()).equals(normalized)) {
                 return c;
             }
         }

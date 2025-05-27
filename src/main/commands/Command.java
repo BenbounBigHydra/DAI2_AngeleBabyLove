@@ -1,7 +1,5 @@
 package main.commands;
 
-import java.text.Normalizer;
-
 public abstract class Command implements ICommand, Comparable<Command> {
 
     private String description;
@@ -9,9 +7,7 @@ public abstract class Command implements ICommand, Comparable<Command> {
 
     public Command(String descriptionTransfer, String actionTransfer) {
         this.description = descriptionTransfer;
-        String actionNormalized = actionTransfer.toLowerCase();
-        actionNormalized = Normalizer.normalize(actionNormalized, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
-        actionNormalized = actionNormalized.replaceAll("[^A-Za-z]", "");
+        String actionNormalized = actionTransfer;
         this.action = actionNormalized;
     }
 
@@ -25,10 +21,10 @@ public abstract class Command implements ICommand, Comparable<Command> {
 
     @Override
     public int compareTo(Command c) {
-        int diff = this.noToCompare()-c.noToCompare();
+        int diff = this.noToCompare() - c.noToCompare();
         if (diff != 0) {
             return diff;
-        }else{
+        } else {
             return this.getAction().compareTo(c.getAction());
         }
     }

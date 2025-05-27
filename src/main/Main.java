@@ -6,9 +6,11 @@ import utils.StringStyling;
 import utils.Style;
 
 public class Main {
-    
+
     public static void main(String[] args) {
+        System.out.println();
         System.out.println(StringStyling.StyleString("Starting...", Style.ITALIC, Color.BLACK));
+        System.out.println();
         Game thisGame = Game.getInstance();
 
         boolean running = true;
@@ -21,6 +23,7 @@ public class Main {
                 running = false;
             } else {
                 System.out.println(action);
+                System.out.println();
             }
         } while (running);
 
