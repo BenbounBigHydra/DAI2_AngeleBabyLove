@@ -13,6 +13,9 @@ public class Main {
         System.out.println();
         Game thisGame = Game.getInstance();
 
+        System.out.println(thisGame.getCommandManager().executeCommand("help"));
+        System.out.println(thisGame.getCommandManager().executeCommand("map"));
+
         boolean running = true;
         do {
             System.out.print("What do you want to do : ");

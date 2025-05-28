@@ -32,7 +32,7 @@ public abstract class Move extends AlterCommand {
 
         Game.getInstance().getWorldMap().setPP(futurePP[0], futurePP[1]);
 
-        System.out.println(Game.getInstance().getCommandManager().executeCommand("map"));
+        //System.out.println(Game.getInstance().getCommandManager().executeCommand("map"));
 
         return "You've enter a new Location";
     }
