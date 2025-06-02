@@ -1,6 +1,10 @@
 package main;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.Normalizer;
+import java.util.List;
 import utils.Color;
 import utils.StringStyling;
 import utils.Style;
@@ -8,13 +12,42 @@ import utils.Style;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println(StringStyling.StyleString("Starting...", Style.ITALIC, Color.BLACK));
-        System.out.println();
+        String answer;
         Game thisGame = Game.getInstance();
 
-        System.out.println(thisGame.getCommandManager().executeCommand("help"));
-        System.out.println(thisGame.getCommandManager().executeCommand("map"));
+        do {
+            System.out.println("Do you want to start a new game or load the saved game ? (new/load)");
+            answer = normalizeString(askSomething());
+        } while (!answer.equals("new") && !answer.equals("load"));
+
+        if (answer.equals("new")) {
+            System.out.println();
+            System.out.println(StringStyling.StyleString("Starting a new game...", Style.ITALIC, Color.BLACK));
+            System.out.println();
+
+            System.out.println(thisGame.getCommandManager().executeCommand("help"));
+            System.out.println(thisGame.getCommandManager().executeCommand("map"));
+
+            try {
+                Files.write(Paths.get("src/main/savedCommands.txt"), new byte[0]);
+            } catch (IOException e) {
+            }
+        } else if (answer.equals("load")) {
+            System.out.println();
+            System.out.println(StringStyling.StyleString("Loading the saved game...", Style.ITALIC, Color.BLACK));
+            System.out.println();
+
+            try {
+                List<String> lines = Files.readAllLines(Paths.get("src/main/savedCommands.txt"));
+
+                for (String string : lines) {
+                    System.out.println(thisGame.getCommandManager().executeCommand(string));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
 
         boolean running = true;
         do {

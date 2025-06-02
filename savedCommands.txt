@@ -1,0 +1,7 @@
+help
+map
+movewest
+map
+inspect
+look
+save

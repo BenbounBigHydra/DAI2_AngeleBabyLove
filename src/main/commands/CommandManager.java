@@ -1,11 +1,13 @@
 package main.commands;
 
 import java.util.*;
+import main.Game;
 import main.Main;
 import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
 import main.commands.alterCommands.MoveSouth;
 import main.commands.alterCommands.MoveWest;
+import main.commands.alterCommands.Save;
 import main.commands.alterCommands.Say;
 import main.commands.alterCommands.Take;
 import main.commands.alterCommands.Use;
@@ -39,6 +41,8 @@ public class CommandManager {
         setCommands.add(new Look("Show you the place you're in", "Look"));
         setCommands.add(new ListInventory("Show items in the inventory", "List"));
         setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "Inspect"));
+
+        setCommands.add(new Save("Save your progression", "Save"));
     }
 
     public String executeCommand(String brutCommand) {
@@ -60,6 +64,7 @@ public class CommandManager {
 
         for (Command c : this.setCommands) {
             if (Main.normalizeString(c.getAction()).equals(normalized)) {
+                Game.getInstance().getCommandTracker().addCommand(normalized);
                 return c;
             }
         }
