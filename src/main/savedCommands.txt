@@ -1,11 +1,12 @@
-help
-map
-save
-movesouth
-map
-map
-movewest
-map
-map
+load
+new
+move west
 say
+move south
+lala
+say
+look
+bite
+move west
+list
 save

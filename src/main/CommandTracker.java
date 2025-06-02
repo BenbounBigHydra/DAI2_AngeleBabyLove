@@ -5,13 +5,20 @@ import java.util.List;
 
 public class CommandTracker {
 
-    private List<String> ct = new ArrayList<>();
+    private List<String> commandTracker = new ArrayList<>();
+    private List<String> commandsToReload = new ArrayList<>();
 
-    public List<String> getCt() {
-        return ct;
+    public List<String> getCommandTracker() {
+        return commandTracker;
     }
 
     public void addCommand(String command) {
-        this.ct.add(command);
+        this.commandTracker.add(command);
     }
+
+    public List<String> getCommandsToReload() {
+        return commandsToReload;
+    }
+
+    
 }

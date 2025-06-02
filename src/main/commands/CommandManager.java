@@ -1,7 +1,6 @@
 package main.commands;
 
 import java.util.*;
-import main.Game;
 import main.Main;
 import main.commands.alterCommands.MoveEast;
 import main.commands.alterCommands.MoveNorth;
@@ -68,7 +67,6 @@ public class CommandManager {
 
         for (Command c : this.setCommands) {
             if (Main.normalizeString(c.getAction()).equals(normalized)) {
-                Game.getInstance().getCommandTracker().addCommand(normalized);
                 return c;
             }
         }

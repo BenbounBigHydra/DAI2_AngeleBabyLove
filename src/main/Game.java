@@ -11,6 +11,7 @@ public class Game {
     private Worldmap map;
     private CommandManager commands;
     private CommandTracker commandTracker;
+    private boolean isRunning;
 
     public CommandTracker getCommandTracker() {
         return this.commandTracker;
@@ -21,6 +22,7 @@ public class Game {
         this.map = new Worldmap();
         this.commands = new CommandManager();
         this.commandTracker = new CommandTracker();
+        this.isRunning = false;
     }
 
     public static Game getInstance() {
@@ -48,6 +50,18 @@ public class Game {
         // your runtime code here...
 
         // end of game
+    }
+
+    public void gameOn(){
+        this.isRunning = true;
+    }
+
+    public void gameOff(){
+        this.isRunning = false;
+    }
+
+    public boolean isRunning() {
+        return this.isRunning;
     }
 
 }

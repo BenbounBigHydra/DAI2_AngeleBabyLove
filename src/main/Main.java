@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.Normalizer;
-import java.util.List;
 import utils.Color;
 import utils.StringStyling;
 import utils.Style;
@@ -14,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         String answer;
         Game thisGame = Game.getInstance();
+        thisGame.gameOn();
 
         do {
             System.out.println("Do you want to start a new game or load the saved game ? (new/load)");
@@ -29,35 +29,43 @@ public class Main {
             System.out.println(thisGame.getCommandManager().executeCommand("map"));
 
         } else if (answer.equals("load")) {
+            thisGame.gameOff();
+
             System.out.println();
             System.out.println(StringStyling.StyleString("Loading the saved game...", Style.ITALIC, Color.BLACK));
             System.out.println();
 
             try {
-                List<String> lines = Files.readAllLines(Paths.get("src/main/savedCommands.txt"));
+                thisGame.getCommandTracker().getCommandsToReload().addAll(Files.readAllLines(Paths.get("src/main/savedCommands.txt")));
 
-                for (String string : lines) {
-                    System.out.println(thisGame.getCommandManager().executeCommand(string));
+                java.util.List<String> commands = thisGame.getCommandTracker().getCommandsToReload();
+                for (int i = 0; i < commands.size(); i++) {
+                    int j = commands.size();
+                    String executeString = commands.get(i);
+                    Game.getInstance().getCommandTracker().addCommand(executeString);
+                    System.out.println(thisGame.getCommandManager().executeCommand(executeString));
                 }
+
+                thisGame.getCommandTracker().getCommandsToReload().clear();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
+            thisGame.gameOn();
         }
 
-        boolean running = true;
         do {
             System.out.print("What do you want to do : ");
 
             String action = thisGame.getCommandManager().executeCommand(askSomething());
 
             if (action == null) {
-                running = false;
+                thisGame.gameOff();
             } else {
                 System.out.println(action);
                 System.out.println();
             }
-        } while (running);
+        } while (thisGame.isRunning());
 
         System.out.println("Congratulation ! You entered the chill and found all the beer");
 
@@ -65,9 +73,18 @@ public class Main {
     }
 
     public static String askSomething() {
+        if (!Game.getInstance().isRunning()) {
+            String entry = Game.getInstance().getCommandTracker().getCommandsToReload().get(Game.getInstance().getCommandTracker().getCommandTracker().size());
+            Game.getInstance().getCommandTracker().getCommandsToReload().remove(Game.getInstance().getCommandTracker().getCommandTracker().size());
+            Game.getInstance().getCommandTracker().addCommand(entry);
+            return entry;
+        }
+
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
         String asked = scanner.nextLine();
+
+        Game.getInstance().getCommandTracker().addCommand(asked);
 
         return asked;
     }

@@ -19,9 +19,10 @@ public class Save extends AlterCommand {
             Files.write(Paths.get("src/main/savedCommands.txt"), new byte[0]);
         } catch (IOException e) {
         }
+
         String filePath = "src/main/savedCommands.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            for (String s : Game.getInstance().getCommandTracker().getCt()) {
+            for (String s : Game.getInstance().getCommandTracker().getCommandTracker()) {
                 writer.write(s);
                 writer.newLine();
             }
