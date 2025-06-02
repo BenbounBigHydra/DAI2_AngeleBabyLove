@@ -77,6 +77,8 @@ public class Array2Dprinter {
                 text = StringStyling.StyleString(text, highlightTextStyle, highlightTextColor, highlightBackgroundColor);
             } else if (element != null && element.isGrayedOut()) {
                 text = StringStyling.StyleString(text, grayedOutTextStyle, grayedOutTextColor, grayedOutBackgroundColor);
+            } else {
+                text = StringStyling.StyleString(text, Style.NORMAL, Color.BLACK, Color.BLACK);
             }
 
             output.append(" ".repeat(SPACING))
