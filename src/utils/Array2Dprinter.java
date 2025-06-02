@@ -8,7 +8,7 @@ public class Array2Dprinter {
     private static int SPACING = 1;
 
     private static Style highlightTextStyle = Style.BOLD;
-    private static Color highlightTextColor = Color.WHITE;
+    private static Color highlightTextColor = Color.RED;
     private static Color highlightBackgroundColor = Color.BLUE;
 
     public static void setHighlightStyle(Style style, Color color, Color backgroundColor) {
@@ -17,7 +17,7 @@ public class Array2Dprinter {
         highlightBackgroundColor = backgroundColor;
     }
 
-    private static Color grayedOutTextColor = Color.BLACK;
+    private static Color grayedOutTextColor = Color.RED;
     private static Style grayedOutTextStyle = Style.NORMAL;
     private static Color grayedOutBackgroundColor = Color.BLACK;
 

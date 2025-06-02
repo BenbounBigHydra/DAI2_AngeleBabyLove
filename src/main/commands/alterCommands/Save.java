@@ -3,6 +3,8 @@ package main.commands.alterCommands;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import main.Game;
 
 public class Save extends AlterCommand {
@@ -13,6 +15,10 @@ public class Save extends AlterCommand {
 
     @Override
     public String execute() {
+        try {
+            Files.write(Paths.get("src/main/savedCommands.txt"), new byte[0]);
+        } catch (IOException e) {
+        }
         String filePath = "src/main/savedCommands.txt";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (String s : Game.getInstance().getCommandTracker().getCt()) {

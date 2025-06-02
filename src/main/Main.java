@@ -28,10 +28,6 @@ public class Main {
             System.out.println(thisGame.getCommandManager().executeCommand("help"));
             System.out.println(thisGame.getCommandManager().executeCommand("map"));
 
-            try {
-                Files.write(Paths.get("src/main/savedCommands.txt"), new byte[0]);
-            } catch (IOException e) {
-            }
         } else if (answer.equals("load")) {
             System.out.println();
             System.out.println(StringStyling.StyleString("Loading the saved game...", Style.ITALIC, Color.BLACK));

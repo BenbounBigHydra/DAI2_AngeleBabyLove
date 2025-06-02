@@ -85,6 +85,6 @@ public class Location implements IPrintable {
 
     @Override
     public boolean isGrayedOut() {
-        return this.unlocked;
+        return !this.unlocked;
     }
 }
