@@ -1,0 +1,11 @@
+help
+map
+save
+movesouth
+map
+map
+movewest
+map
+map
+say
+save

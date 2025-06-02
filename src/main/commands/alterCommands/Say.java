@@ -22,7 +22,7 @@ public class Say extends AlterCommand {
                 if (answer.equals(p.getSolution())) {
                     listPuzzles.remove(p);
                     for (Item i : p.getReward()) {
-                        Game.getInstance().getPlayer().getInventory().getListItemInInventory().add(i);
+                        Game.getInstance().getPlayer().getInventory().addItem(i);
                     }
                     return p.getSaidWhenResolved();
                 }

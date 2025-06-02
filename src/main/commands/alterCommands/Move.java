@@ -1,6 +1,7 @@
 package main.commands.alterCommands;
 
 import main.Game;
+import main.world.TeleportationCrystal;
 
 public abstract class Move extends AlterCommand {
 
@@ -33,6 +34,9 @@ public abstract class Move extends AlterCommand {
         Game.getInstance().getWorldMap().setPP(futurePP[0], futurePP[1]);
 
         System.out.println(Game.getInstance().getCommandManager().executeCommand("map"));
+
+        // Si le joueur se déplace dans une nouvelle location, on l'ajoute à la liste des locations connues
+        TeleportationCrystal.getInstance().addLocationToList(Game.getInstance().getWorldMap().getMap()[futurePP[0]][futurePP[1]], futurePP[0], futurePP[1]);
 
         return "You've enter a new Location";
     }

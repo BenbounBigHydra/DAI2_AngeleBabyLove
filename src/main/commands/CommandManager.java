@@ -24,6 +24,10 @@ public class CommandManager {
         return setCommands;
     }
 
+    public void addCommand(Command command) {
+        this.setCommands.add(command);
+    }
+
     public CommandManager() {
         setCommands = new TreeSet<>();
 
