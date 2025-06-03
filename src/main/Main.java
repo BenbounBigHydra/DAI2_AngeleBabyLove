@@ -40,8 +40,8 @@ public class Main {
 
                 java.util.List<String> commands = thisGame.getCommandTracker().getCommandsToReload();
                 for (int i = 0; i < commands.size(); i++) {
-                    int j = commands.size();
                     String executeString = commands.get(i);
+                    System.out.println(executeString);
                     Game.getInstance().getCommandTracker().addCommand(executeString);
                     System.out.println(thisGame.getCommandManager().executeCommand(executeString));
                 }
@@ -74,9 +74,10 @@ public class Main {
 
     public static String askSomething() {
         if (!Game.getInstance().isRunning()) {
-            String entry = Game.getInstance().getCommandTracker().getCommandsToReload().get(Game.getInstance().getCommandTracker().getCommandTracker().size());
-            Game.getInstance().getCommandTracker().getCommandsToReload().remove(Game.getInstance().getCommandTracker().getCommandTracker().size());
+            String entry = Game.getInstance().getCommandTracker().getCommandsToReload().get(Game.getInstance().getCommandTracker().getCommandTracker().size() - 1);
+            // Game.getInstance().getCommandTracker().getCommandsToReload().remove(Game.getInstance().getCommandTracker().getCommandTracker().size());
             Game.getInstance().getCommandTracker().addCommand(entry);
+            System.out.println(entry);
             return entry;
         }
 

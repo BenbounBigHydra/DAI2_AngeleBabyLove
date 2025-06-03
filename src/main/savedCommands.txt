@@ -1,12 +1,13 @@
-load
 new
-move west
-say
+move sout
 move south
-lala
-say
-look
-bite
 move west
+say
+blbl
+say
+bite
 list
+move north
+say
+caca
 save

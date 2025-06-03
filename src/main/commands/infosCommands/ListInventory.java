@@ -3,6 +3,7 @@ package main.commands.infosCommands;
 import java.security.Key;
 import main.Game;
 import main.world.Item;
+import main.world.TeleportationCrystal;
 
 public class ListInventory extends InfosCommand {
 
@@ -16,10 +17,12 @@ public class ListInventory extends InfosCommand {
             return "Your inventory is empty";
         } else {
             String toReturn = "Your inventory : " + System.lineSeparator();
-            int n = 0;
+            int n = 1;
             for (Item i : Game.getInstance().getPlayer().getInventory().getListItemInInventory()) {
                 if (i instanceof Key) {
                     toReturn = toReturn + "Item " + n + " (Key) : " + i.getDescription() + System.lineSeparator();
+                } else if (i instanceof TeleportationCrystal) {
+                    toReturn = toReturn + "Item " + n + " : " + i.getDescription() + System.lineSeparator();
                 } else {
                     toReturn = toReturn + "Item " + n + " (Letter) : " + i.getDescription() + System.lineSeparator();
                 }
