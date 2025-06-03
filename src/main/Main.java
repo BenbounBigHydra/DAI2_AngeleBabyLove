@@ -38,12 +38,8 @@ public class Main {
             try {
                 thisGame.getCommandTracker().getCommandsToReload().addAll(Files.readAllLines(Paths.get("src/main/savedCommands.txt")));
 
-                java.util.List<String> commands = thisGame.getCommandTracker().getCommandsToReload();
-                for (int i = 0; i < commands.size(); i++) {
-                    String executeString = commands.get(i);
-                    System.out.println(executeString);
-                    Game.getInstance().getCommandTracker().addCommand(executeString);
-                    System.out.println(thisGame.getCommandManager().executeCommand(executeString));
+                while (!thisGame.getCommandTracker().getCommandsToReload().isEmpty()) {
+                    System.out.println(Game.getInstance().getCommandManager().executeCommand(reloadCommand()));
                 }
 
                 thisGame.getCommandTracker().getCommandsToReload().clear();
@@ -74,10 +70,7 @@ public class Main {
 
     public static String askSomething() {
         if (!Game.getInstance().isRunning()) {
-            String entry = Game.getInstance().getCommandTracker().getCommandsToReload().get(Game.getInstance().getCommandTracker().getCommandTracker().size() - 1);
-            // Game.getInstance().getCommandTracker().getCommandsToReload().remove(Game.getInstance().getCommandTracker().getCommandTracker().size());
-            Game.getInstance().getCommandTracker().addCommand(entry);
-            System.out.println(entry);
+            String entry = reloadCommand();
             return entry;
         }
 
@@ -94,7 +87,13 @@ public class Main {
         String normalized = unnormalized.toLowerCase();
         normalized = Normalizer.normalize(normalized, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
         normalized = normalized.replaceAll("[^A-Za-z]", "");
-
         return normalized;
+    }
+
+    public static String reloadCommand() {
+        String executeString = Game.getInstance().getCommandTracker().getCommandsToReload().poll();
+        System.out.println(executeString);
+        Game.getInstance().getCommandTracker().addCommand(executeString);
+        return executeString;
     }
 }
