@@ -30,42 +30,44 @@ public class Worldmap {
         //Créer le puzzle 3 (Nami TpCrystal) et ajouter les clés
         reward.clear();
         reward.add(TeleportationCrystal.getInstance());
-        Puzzle puzzleOfNami = new Puzzle("bite",("Nami open big her mouth and a shiny crystal rises from it and fall in your hand. You recieved the legendary "+StringStyling.StyleString("Teleportation Crystal !", Style.BOLD, Color.GREEN)), reward);
+        Puzzle puzzleOfNami = new Puzzle("give", ("Nami open big her mouth and a shiny crystal rises from it and fall in your hand. You recieved the legendary " + StringStyling.StyleString("Teleportation Crystal !", Style.BOLD, Color.BLUE)), reward);
         //Créer les lettres
         Letter letterSteve = new Letter("A letter smelling fish", "Hello there! I have an appointment soon, but I have no idea what time it is because I lost my phone again. Can you help me out? I'm currently working on... well, not much, but I'm pretending to. Thanks for your help! -Steve");
         Letter letterLeo = new Letter("A well folded letter", "Hey Jerem ! I left the key of the chill hidden in our favourite machine of the cafeteria. You can grab it next time. Has anyone seen my dog? She stole my magic teleportation crystal again... -Léo");
 
         //Crée et insère les Location dans la map
-        map[0][0] = new Location("School", "The place to study. Steve is sitting in a corner. He is pretending to work very well.", puzzleOfSteveHour, null);
+        map[0][0] = new Location("School work area", "The place to study. Steve is sitting in a corner. He is pretending to work very well.", puzzleOfSteveHour, null);
         map[0][0].unlock();
         map[0][1] = new Location("Chill", "The best place on earth <3", null, keyChill);
-        map[0][2] = new Location("Cafeteria", "The place to eat sweets and drink lots of coffee.", puzzleOfHiddenKey, null);
+        map[0][2] = new Location("Cafeteria's kitchen", "The place where sweets and gallons of coffee are prepared.", puzzleOfHiddenKey, null);
         map[0][2].unlock();
-        map[1][0] = new Location("School", "The building lobby", null, null);
+        map[1][0] = new Location("School entrance", "The building's entrance", null, null);
         map[1][0].unlock();
-        map[1][1] = new Location("Court", "The shadow of the majestic fountain can be seen on the seven", null, null);
+        map[1][1] = new Location("Court's fountain", "The shadow of the majestic fountain can be seen on the seven", null, null);
         map[1][1].unlock();
-        map[1][2] = new Location("Cafeteria", "The Gertrude's Cafeteria", null, keyCafet);
+        map[1][2] = new Location("Cafeteria", "The place to eat sweets and drink lots of coffee.", null, keyCafet);
         map[1][2].addItems(letterLeo);
-        map[2][0] = new Location("School", "The building's lobby", null, null);
+        map[2][0] = new Location("School lobby", "The building's lobby", null, null);
         map[2][0].unlock();
         map[2][1] = new Location("Court", "The concrete courtyard", null, null);
         map[2][1].unlock();
-        map[2][2] = new Location("Court", "The concrete courtyard", null, null);
+        map[2][2] = new Location("Track", "The small track to school", null, null);
         map[2][2].unlock();
         map[2][2].addItems(letterSteve);
-        map[3][0] = new Location("School", "The building lobby", null, null);
+        map[3][0] = new Location("School's stairs", "The stairs to the classroom. You can't go further it's reserved to mechanics.", null, null);
         map[3][0].unlock();
-        map[3][1] = new Location("Court", "The courtyard where Nami is sitting. She greets you with her paw.", puzzleOfNami, null);
+        map[3][1] = new Location("Grass court", "The courtyard where Nami is sitting. She greets you with her paw.", puzzleOfNami, null);
         map[3][1].unlock();
         map[3][2] = new Location("Baleinev room", "The Baleinev room. Raph is sitting on the sofa. You can hear him explaining to a new student that the fountain in the courtyard is a sundial.", null, null);
         map[3][2].unlock();
-
 
         //Défini la position du player
         playerPosition = new int[2];
         playerPosition[0] = 2;
         playerPosition[1] = 2;
+
+        //Ajoute la position de départ dans la liste des positions du TeleportationCrystal
+        TeleportationCrystal.getInstance().addLocationToList(map[playerPosition[0]][playerPosition[1]], playerPosition[0], playerPosition[1]);
     }
 
     public int[] getPP() {

@@ -38,6 +38,11 @@ public abstract class Move extends AlterCommand {
         // Si le joueur se déplace dans une nouvelle location, on l'ajoute à la liste des locations connues
         TeleportationCrystal.getInstance().addLocationToList(Game.getInstance().getWorldMap().getMap()[futurePP[0]][futurePP[1]], futurePP[0], futurePP[1]);
 
+        if (Game.getInstance().getWorldMap().getMap()[futurePP[0]][futurePP[1]].getName().equals("Chill")) {
+            return null;
+            
+        }
+
         return "You've enter a new Location";
     }
 

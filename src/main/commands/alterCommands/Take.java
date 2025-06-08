@@ -14,6 +14,11 @@ public class Take extends AlterCommand {
     @Override
     public String execute() {
         Location currentLoc = Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]];
+
+        if (currentLoc.getName().equals("Chill")) {
+            return null;
+        }
+
         if (currentLoc.getListItems().isEmpty()) {
             return "There is no item to take";
         } else {

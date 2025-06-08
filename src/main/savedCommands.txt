@@ -1,0 +1,14 @@
+move west
+move north
+move south
+move south
+say
+give
+telepor
+teleport
+court's fountain
+teleport 
+grass court
+move east
+teleport
+

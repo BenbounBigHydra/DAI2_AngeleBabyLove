@@ -51,13 +51,15 @@ public class Main {
         }
 
         do {
-            System.out.print("What do you want to do : ");
+            System.out.println();
+            System.out.print(StringStyling.StyleString("What do you want to do : ", Style.ITALIC, Color.BLACK));
 
             String action = thisGame.getCommandManager().executeCommand(askSomething());
 
             if (action == null) {
                 thisGame.gameOff();
             } else {
+                System.out.println();
                 System.out.println(action);
                 System.out.println();
             }

@@ -41,7 +41,7 @@ public class CommandManager {
         setCommands.add(new Use("Allow you to use keys to unlock locations", "Use"));
 
         setCommands.add(new MapDisplay("Display the map", "Map"));
-        setCommands.add(new Look("Show you the place you're in", "Look"));
+        setCommands.add(new Look("Show you the place you're in and it's items if there is any", "Look"));
         setCommands.add(new ListInventory("Show items in the inventory", "List"));
         setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "Inspect"));
 

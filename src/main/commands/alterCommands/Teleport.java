@@ -18,6 +18,11 @@ public class Teleport extends AlterCommand {
             return "You don't have the teleportation crystal.";
         }
 
+        /*System.out.println("Available destinations:");
+        for (Location loc : TeleportationCrystal.getInstance().getLocationList().keySet()) {
+            System.out.println("- " + loc.getName());
+        }*/
+
         System.out.println("Where do you want to teleport?");
         String destination = Main.normalizeString(Main.askSomething());
 
