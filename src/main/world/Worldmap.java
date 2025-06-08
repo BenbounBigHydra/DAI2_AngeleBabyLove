@@ -56,7 +56,7 @@ public class Worldmap {
         map[2][2].addItems(letterSteve);
         map[3][0] = new Location("School's stairs", "The stairs to the classroom. You can't go further it's reserved to mechanics.", null, null);
         map[3][0].unlock();
-        map[3][1] = new Location("Grass court", "The courtyard where Nami is sitting. She greets you with her paw.", puzzleOfNami, null);
+        map[3][1] = new Location("Grass court", "The courtyard where Nami is sitting. She greets you with her paw. she looks like she wants to play fetch.", puzzleOfNami, null);
         map[3][1].unlock();
         map[3][2] = new Location("Baleinev room", "The Baleinev room. Raph is sitting on the sofa. You can hear him explaining to a new student that the fountain in the courtyard is a sundial.", null, null);
         map[3][2].unlock();
