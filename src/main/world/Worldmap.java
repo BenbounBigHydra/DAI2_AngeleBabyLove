@@ -42,7 +42,7 @@ public class Worldmap {
         //Créer le puzzle 3 (Nami TpCrystal) et ajouter les clés
         reward.clear();
         reward.add(TeleportationCrystal.getInstance());
-        Puzzle puzzleOfNami = new Puzzle("give", ("Nami open wide her mouth and a shiny crystal rises from it and falls in your hand. You recieved the legendary " + StringStyling.StyleString("Teleportation Crystal !", Style.BOLD, Color.BLUE)), reward);
+        Puzzle puzzleOfNami = new Puzzle("give", ("Nami open wide her mouth and a shiny crystal rises from it and falls in your hand. You received the legendary " + StringStyling.StyleString("Teleportation Crystal !", Style.BOLD, Color.BLUE)), reward);
         //Créer les lettres
         Letter letterSteve = new Letter(
             "A letter smelling fish",
@@ -90,7 +90,7 @@ public class Worldmap {
         map[2][2].addItems(letterSteve);
         map[3][0] = new Location("School's stairs", "The stairs to the classroom. You can't go further it's reserved to mechanics.", null, null);
         map[3][0].unlock();
-        map[3][1] = new Location("Grass court", "The courtyard where Nami is sitting. She greets you with her paw. she looks like she wants to play fetch.", puzzleOfNami, null);
+        map[3][1] = new Location("Grass court", "The courtyard where Nami is sitting. She greets you with her paw. She looks like she wants to play fetch.", puzzleOfNami, null);
         map[3][1].unlock();
         map[3][2] = new Location("Baleinev room", "The Baleinev room. Raph is sitting on the sofa. You can hear him explaining to a new student that the fountain in the courtyard is a sundial.", null, null);
         map[3][2].unlock();
