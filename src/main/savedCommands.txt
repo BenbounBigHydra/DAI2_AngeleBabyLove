@@ -1,14 +1,21 @@
+take
+1
+move west
 move west
 move north
-move south
-move south
+movt north
+move north
 say
-give
-telepor
-teleport
-court's fountain
-teleport 
-grass court
+seven
+list
+move south
 move east
-teleport
-
+use
+1
+move east
+move north
+say
+coffee machine
+use
+3
+1

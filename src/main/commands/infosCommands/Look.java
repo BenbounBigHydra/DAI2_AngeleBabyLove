@@ -17,8 +17,11 @@ public class Look extends InfosCommand {
         }
         String toReturn = Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getDescription();
 
-        for (Item item : Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getListItems()) {
-            toReturn = toReturn + System.lineSeparator() + item.getDescription();
+        if (!Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getListItems().isEmpty()) {
+            toReturn = toReturn + System.lineSeparator() + "Available items in this location :";
+            for (Item item : Game.getInstance().getWorldMap().getMap()[Game.getInstance().getWorldMap().getPP()[0]][Game.getInstance().getWorldMap().getPP()[1]].getListItems()) {
+                toReturn = toReturn + System.lineSeparator() + item.getDescription();
+            }
         }
 
         return toReturn;

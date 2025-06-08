@@ -26,6 +26,7 @@ public class Main {
             System.out.println();
 
             System.out.println(thisGame.getCommandManager().executeCommand("help"));
+            System.out.println(StringStyling.StyleString("You", Style.BOLD, Color.GREEN) + " - " + StringStyling.StyleString("Locked", Style.ITALIC, Color.RED));
             System.out.println(thisGame.getCommandManager().executeCommand("map"));
 
         } else if (answer.equals("load")) {
@@ -65,7 +66,7 @@ public class Main {
             }
         } while (thisGame.isRunning());
 
-        System.out.println("Congratulation ! You entered the chill and found all the beer");
+        System.out.println("Congratulation ! You entered the chill and found all the beers");
 
         System.out.println(StringStyling.StyleString("Terminating...", Style.ITALIC, Color.BLACK));
     }

@@ -36,12 +36,12 @@ public class CommandManager {
         setCommands.add(new MoveNorth("Allow you to move north", "Move North"));
         setCommands.add(new MoveSouth("Allow you to move south", "Move South"));
         setCommands.add(new MoveWest("Allow you to move west", "Move West"));
-        setCommands.add(new Say("Allow you to propose an answer for a puzzle", "Say"));
+        setCommands.add(new Say("Allow you to suggest an answer for a puzzle", "Say"));
         setCommands.add(new Take("Allow you to take an item to add in your inventory", "Take"));
         setCommands.add(new Use("Allow you to use keys to unlock locations", "Use"));
 
         setCommands.add(new MapDisplay("Display the map", "Map"));
-        setCommands.add(new Look("Show you the place you're in and it's items if there is any", "Look"));
+        setCommands.add(new Look("Show you the place you're in and its items if there is any", "Look"));
         setCommands.add(new ListInventory("Show items in the inventory", "List"));
         setCommands.add(new Inspect("Allow you to inspect letters in your inventory", "Inspect"));
 

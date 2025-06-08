@@ -27,7 +27,7 @@ public class Inspect extends InfosCommand {
         } else {
             int a = 1;
             for (Item i : letters) {
-                System.out.println("Lettre " + a + " : " + i.getDescription());
+                System.out.println("Letter " + a + " : " + i.getDescription());
                 a++;
             }
             boolean verif = true;

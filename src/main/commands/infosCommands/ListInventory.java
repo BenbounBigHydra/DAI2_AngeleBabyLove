@@ -1,8 +1,9 @@
 package main.commands.infosCommands;
 
-import java.security.Key;
+
 import main.Game;
 import main.world.Item;
+import main.world.Key;
 import main.world.TeleportationCrystal;
 
 public class ListInventory extends InfosCommand {
