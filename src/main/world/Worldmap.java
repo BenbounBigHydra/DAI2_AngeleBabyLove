@@ -26,14 +26,48 @@ public class Worldmap {
         //Créer le puzzle 2 (Machine à café) et ajouter les clés
         reward.clear();
         reward.add(keyCafet);
-        Puzzle puzzleOfSteveHour = new Puzzle("seven", "Oh thank you for your help! I was going to be late for my non-existent class. For your information, I saw Léo leave a letter for Jerem in the cafeteria. You should pick it up before he finds it. The cafeteria is closed, but here's the access badge. You should take it with you. ", reward);
+        Puzzle puzzleOfSteveHour = new Puzzle(
+            "seven",
+            StringStyling.StyleString(
+            "Oh thank you for your help!" + System.lineSeparator() +
+            "I was going to be late for my non-existent class." + System.lineSeparator() +
+            "For your information, I saw Léo leave a letter for Jerem in the cafeteria." + System.lineSeparator() +
+            "You should pick it up before he finds it." + System.lineSeparator() +
+            "The cafeteria is closed, but here's the access badge. You should take it with you.",
+            Style.ITALIC,
+            Color.BLACK
+            ),
+            reward
+        );
         //Créer le puzzle 3 (Nami TpCrystal) et ajouter les clés
         reward.clear();
         reward.add(TeleportationCrystal.getInstance());
         Puzzle puzzleOfNami = new Puzzle("give", ("Nami open wide her mouth and a shiny crystal rises from it and falls in your hand. You recieved the legendary " + StringStyling.StyleString("Teleportation Crystal !", Style.BOLD, Color.BLUE)), reward);
         //Créer les lettres
-        Letter letterSteve = new Letter("A letter smelling fish", "Hello there! I have an appointment soon, but I have no idea what time it is currently because I lost my phone again. Could you tell me what time it is? I'm currently working on... well, not much, but I'm pretending to. Thanks for your help! -Steve");
-        Letter letterLeo = new Letter("A well folded letter", "Hey Jerem ! I left the key of the chill hidden in our favourite machine of the cafeteria. You can grab it next time. Has anyone seen my dog? She stole my magic teleportation crystal again... -Léo");
+        Letter letterSteve = new Letter(
+            "A letter smelling fish",
+            StringStyling.StyleString(
+            "Hello there!" + System.lineSeparator() +
+            "I have an appointment soon, but I have no idea what time it is currently because I lost my phone again." + System.lineSeparator() +
+            "Could you tell me what time it is?" + System.lineSeparator() +
+            "I'm currently working on... well, not much, but I'm pretending to." + System.lineSeparator() +
+            "Thanks for your help! -Steve",
+            Style.ITALIC,
+            Color.BLACK
+            )
+        );
+        Letter letterLeo = new Letter(
+            "A well folded letter",
+            StringStyling.StyleString(
+            "Hey Jerem !" + System.lineSeparator() +
+            "I left the key of the chill hidden in our favourite machine of the cafeteria." + System.lineSeparator() +
+            "You can grab it next time." + System.lineSeparator() +
+            "Has anyone seen my dog? She stole my magic teleportation crystal again..." + System.lineSeparator() +
+            "-Léo",
+            Style.ITALIC,
+            Color.BLACK
+            )
+        );
 
         //Crée et insère les Location dans la map
         map[0][0] = new Location("School work area", "The place to study. Steve is sitting in a corner. He is pretending to work very well.", puzzleOfSteveHour, null);
@@ -51,7 +85,7 @@ public class Worldmap {
         map[2][0].unlock();
         map[2][1] = new Location("Court", "The concrete courtyard", null, null);
         map[2][1].unlock();
-        map[2][2] = new Location("Track", "The small track to school", null, null);
+        map[2][2] = new Location("Pathway", "The small pathway to school", null, null);
         map[2][2].unlock();
         map[2][2].addItems(letterSteve);
         map[3][0] = new Location("School's stairs", "The stairs to the classroom. You can't go further it's reserved to mechanics.", null, null);

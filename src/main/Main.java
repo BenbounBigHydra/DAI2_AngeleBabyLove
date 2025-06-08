@@ -21,8 +21,17 @@ public class Main {
         } while (!answer.equals("new") && !answer.equals("load"));
 
         if (answer.equals("new")) {
-            System.out.println();
-            System.out.println(StringStyling.StyleString("Starting a new game...", Style.ITALIC, Color.BLACK));
+            System.out.println(StringStyling.StyleString(("Hey you! What’s up?" + System.lineSeparator()
+                    + "You’ve just launched the best indie game in all of HEIG! Or at least… that’s what we’re aiming for." + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "Right now, you’re on the Cheseaux map. As you can see, there’s the court area, the Baleinev room, the school, the cafet’, and most importantly… the chill zone. That’s where you wanna be." + System.lineSeparator()
+                    + "Why? Well, rumor has it they just got a fresh delivery of beers, and your goal is to swipe them all to give ‘em a proper taste test. Yeah yeah, maybe you’re a bit selfish and impatient. So what?" + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "Of course, some zones are locked. You’ll need to explore the map and gather intel to find the legendary keys to chill." + System.lineSeparator()
+                    + "On your way, you’ll bump into some familiar names (or maybe not), representing our so-called “real” engineer buddies. Oh, and there’s Nami—Léo’s dog. She’s got something in her mouth that might come in real handy if you’re trying to move faster… I won’t spoil it, but don’t get too cocky. She’s not giving it up without a fight." + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "I think that’s everything. If I forgot something… too bad." + System.lineSeparator()
+                    + "Good luck, you’re gonna need it."), Style.ITALIC, Color.BLACK));
             System.out.println();
 
             System.out.println(thisGame.getCommandManager().executeCommand("help"));
